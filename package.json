@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ilex0208/PersonalDemo/issues"
   },
-  "homepage": "https://github.com/ilex0208/PersonalDemo#readme"
+  "homepage": "https://github.com/ilex0208/PersonalDemo#readme",
+  "devDependencies": {
+    "react": "^15.3.2"
+  }
 }
