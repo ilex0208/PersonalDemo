@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/ilex0208/PersonalDemo#readme",
   "devDependencies": {
-    "react": "^15.3.2"
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^3.0.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
