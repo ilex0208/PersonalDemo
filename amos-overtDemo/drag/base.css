@@ -34,7 +34,27 @@ li {
 #logo {
   float: left;
   margin-right: 10px;
-  animation: 3s linear 0s normal none infinite running CDturn;
+  animation: 3s linear 0s normal none infinite running logoTurn;
+}
+
+@keyframes logoTurn {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes logoTurn {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 #content {

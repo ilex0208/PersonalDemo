@@ -1,4 +1,72 @@
-#logo {
-  margin: 0 auto;
-  animation: 3s linear 0s normal none infinite running CDturn;
+.scan {
+  text-align: center;
+}
+
+#car {
+  top: 100px;
+  animation: 3s linear 0s normal none infinite running straightLine;
+}
+
+@keyframes straightLine {
+  30% {
+    transform: translateX(600px);
+  }
+
+  50% {
+    /* transform: translate3D(100px, 0, 0); x,y,z */
+    transform: translate3D(100px, 100px, 200px);
+  }
+
+  70% {
+    transform: translateX(300px);
+  }
+
+  100% {
+    transform: translate3D(20px, 20px, 0);
+  }
+}
+
+#img1 {
+  width: 130px;
+  animation: 3s linear 0s normal none infinite running img1Turn;
+}
+
+#img2 {
+  width: 130px;
+  animation: 3s linear 0s normal none infinite running img1Turn;
+}
+
+#img3 {
+  width: 130px;
+  animation: 3s linear 0s normal none infinite running img1Turn;
+}
+
+#img4 {
+  width: 130px;
+  animation: 3s linear 0s normal none infinite running img1Turn;
+}
+
+#img5 {
+  width: 130px;
+  animation: 3s linear 0s normal none infinite running img1Turn;
+}
+
+@keyframes img1Turn {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes img1Turn {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
