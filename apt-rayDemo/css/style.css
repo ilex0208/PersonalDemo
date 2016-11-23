@@ -1,0 +1,11 @@
+#app {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  background: #EEE;
+}
+
+#node {
+  background-color: #DDD;
+  border: 1px solid #444;
+}

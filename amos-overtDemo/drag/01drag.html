@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>拓扑</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+
+    <!-- 配置自己的路径  -->
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="./jtopo-min.js"></script>
+    <script type="text/javascript" src="./conf.js"></script>
+    <script type="text/javascript" src="./mytopo.js"></script>
+    <script type="text/javascript" src="./toolbar.js"></script>
+    <script type="text/javascript" src="./tooldrag.js"></script>
+    <link rel="stylesheet" type="text/css" href="./base.css">
+</head>
+
+<body>
+    <div id="content">
+        <div class="drag-content">
+            <!--原始节点  -->
+            <canvas id='dev_a' width='100' height='55' draggable="true" ondragstart="drag(event)">
+                当前浏览器无法使用canvas标签，请更换新版本浏览器
+            </canvas>
+            <canvas id='dev_b' width='100' height='55' draggable="true" ondragstart="drag(event)">
+                当前浏览器无法使用canvas标签，请更换新版本浏览器
+            </canvas>
+        </div>
+        <div id="dst" class="topo-bg-default" ondrop="drop(event)">
+            <canvas width="900px" height="550px" id="canvas"></canvas>
+        </div>
+
+<div class='blood bloodA'>
+     <div style='bottom: 0px; '></div>
+</div>
+    </div>
+</body>
+
+</html>

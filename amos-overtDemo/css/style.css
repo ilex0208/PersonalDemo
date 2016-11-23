@@ -1,0 +1,85 @@
+.content {
+  display: block;
+  padding: 20px;
+  overflow: auto;
+  background: white;
+  border: 1px solid #E8E8E8;
+  border-radius: 6px;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, box-shadow 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+  list-style: outside none none;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*::-moz-selection {
+  color: white;
+  background: #019BF0;
+}
+
+.exhibition-list {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+a {
+  padding: 0.5rem 0 0 1rem;
+  color: #019BF0;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  outline: medium none;
+  transition: color 0.45s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+img {
+  border-style: none;
+}
+
+.exhibition-list > li {
+  display: inline-block;
+  width: 15%;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: medium none;
+  border-radius: 0;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, box-shadow 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.exhibition-list > li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.exhibition-list > li a,
+.exhibition-list > li a img {
+  display: block;
+}
+
+.exhibition-list > li h3 {
+  line-height: 42px;
+  color: #666;
+  background: white;
+}
