@@ -28,30 +28,30 @@
 
 #img1 {
   width: 130px;
-  animation: 3s linear 0s normal none infinite running img1Turn;
+  animation: 3s linear 0s normal none infinite running scanImgTurn;
 }
 
 #img2 {
   width: 130px;
-  animation: 3s linear 0s normal none infinite running img1Turn;
+  animation: 3s linear 0s normal none infinite running scanImgTurn;
 }
 
 #img3 {
   width: 130px;
-  animation: 3s linear 0s normal none infinite running img1Turn;
+  animation: 3s linear 0s normal none infinite running scanImgTurn;
 }
 
 #img4 {
   width: 130px;
-  animation: 3s linear 0s normal none infinite running img1Turn;
+  animation: 3s linear 0s normal none infinite running scanImgTurn;
 }
 
 #img5 {
   width: 130px;
-  animation: 3s linear 0s normal none infinite running img1Turn;
+  animation: 3s linear 0s normal none infinite running scanImgTurn;
 }
 
-@keyframes img1Turn {
+@keyframes scanImgTurn {
   from {
     transform: rotate(0deg);
   }
@@ -61,7 +61,7 @@
   }
 }
 
-@-webkit-keyframes img1Turn {
+@-webkit-keyframes scanImgTurn {
   from {
     transform: rotate(0deg);
   }
