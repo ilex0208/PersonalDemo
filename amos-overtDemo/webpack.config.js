@@ -6,7 +6,8 @@ module.exports = {
     performance: './performance.js',
     statictis: './statictis.js',
     mix: './mix.js',
-    animate: './animate.js'
+    animate: './animate.js',
+    layout: './layout.js'
   },
   output: {
     path: './dist', // 编译到当前目录

@@ -1,5 +1,6 @@
 .content {
   display: block;
+  min-width: 30rem;
   padding: 20px;
   overflow: auto;
   background: white;
@@ -59,7 +60,7 @@ img {
 
 .exhibition-list > li {
   display: inline-block;
-  width: 15%;
+  width: 20%;
   margin-bottom: 1rem;
   text-align: center;
   border: medium none;
