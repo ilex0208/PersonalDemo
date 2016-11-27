@@ -78,7 +78,7 @@ function nodeFlash(node, n) {
 var runPrefixMethod = function(element, method) {
   var usablePrefixMethod;
   ['webkit', 'moz', 'ms', 'o', ''].forEach(function(prefix) {
-    if (usablePrefixMethod) return;
+    if (usablePrefixMethod) {return;}
     if (prefix === '') {
       // 无前缀，方法首字母小写
       method = method.slice(0, 1).toLowerCase() + method.slice(1);
@@ -96,18 +96,3 @@ var runPrefixMethod = function(element, method) {
 
   return usablePrefixMethod;
 };
-/*
-runPrefixMethod(this, "RequestFullScreen");
-if (typeof window.screenX === "number") {
-var eleFull = canvas;
-eleFull.addEventListener("click", function() {
-	if (runPrefixMethod(document, "FullScreen") || runPrefixMethod(document, "IsFullScreen")) {
-		runPrefixMethod(document, "CancelFullScreen");
-		this.title = this.title.replace("退出", "");
-	} else if (runPrefixMethod(this, "RequestFullScreen")) {
-		this.title = this.title.replace("点击", "点击退出");
-	}
-});
-} else {
-alert("浏览器不支持");
-}*/
