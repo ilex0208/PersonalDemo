@@ -5,11 +5,12 @@ function render() {
   let stage = new _aot.Stage(canvas);
 
   let scene = new _aot.Scene(stage);
-  scene.background = './img/bg/bg.png';
+  scene.background = './img/bg/bg-min.png';
   var routerNode = new _aot.Node('router');
   routerNode.setSize(30, 26);
   routerNode.setImage('./img/pstn/router.png', true);
   routerNode.setLocation(360, 130);
+  routerNode.fontColor = '255,0,0';
   routerNode.layout = {
     type: 'tree',
     width: 230,
@@ -23,6 +24,7 @@ function render() {
     node.fillStyle = '200,255,0';
     node.radius = 15;
     node.setLocation(scene.width * Math.random(), scene.height * Math.random());
+    node.fontColor = '255,0,0';
     node.layout = {
       type: 'tree',
       width: 50,
@@ -38,6 +40,7 @@ function render() {
       vmNode.radius = 10;
       vmNode.fillStyle = '255,255,0';
       vmNode.setLocation(scene.width * Math.random(), scene.height * Math.random());
+      vmNode.fontColor = '255,0,0';
       scene.add(vmNode);
       scene.add(new _aot.Link(node, vmNode));
     }
