@@ -1,0 +1,48 @@
+﻿.top-header {
+  text-align: center;
+}
+
+#inp_url {
+  width: 300px;
+}
+
+.zone-conn {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.zone-send {
+  margin-top: 20px;
+  margin-left: 20px;
+  clear: both;
+}
+
+#btn_send {
+  width: 430px;
+}
+
+.list-emoji {
+  float: left;
+  margin: 4px;
+  list-style: none;
+}
+
+#div_msg {
+  overflow-y: auto;
+}
+
+.clearboth {
+  padding-top: 5px;
+  margin-left: 20px;
+  clear: both;
+  color: gray;
+}
+
+.send-content {
+  width: 430px !important;
+  height: 154px !important;
+  max-width: 500px;
+  max-height: 200px;
+  min-width: 14px;
+  min-height: 14px;
+}
