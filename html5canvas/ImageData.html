@@ -15,6 +15,10 @@
   <canvas id="imgCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML5 canvas tag.
   </canvas>
+
+  <canvas id="imgAlphaCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
   <script>
     var myCanvas=document.getElementById("myCanvas");
     var ctx1 = myCanvas.getContext("2d");
@@ -43,46 +47,40 @@
         var idata = color(255);
         ctx1.putImageData(idata ,10,70);
     }
-
-    var imgCanvas=document.getElementById("imgCanvas");
+    /////////////////////////////////////////////
+    var imgCanvas = document.getElementById("imgCanvas");
     var ctx2 = imgCanvas.getContext("2d");
-
     function imgCanvasLoad(){
         var imgInit = document.getElementById("drawImage");
         ctx2.drawImage(imgInit, 0, 0);
     }
+    /////////////////////////////////////////////
+    var imgAlphaCanvas = document.getElementById("imgAlphaCanvas");
+    var ctx3 = imgAlphaCanvas.getContext("2d");
+    function imgAlphaCanvasLoad(){
+        var imgInit = document.getElementById("drawImage");
+        ctx3.drawImage(imgInit, 0, 0);
+    }
 
-    function changeImageColor(r, g, b)
-    {
+    function changeImageColor(r, g, b){
         var img = document.getElementById("drawImage");
         var w = img.width, h = img.height;
         var imgData = ctx2.getImageData(0,0,w,h);
-        var data = imgData.data
-        var result = '';
-        data.forEach(function(val, i){
-            if(i % 4 === 0){
-                result += '\n';
-            }else {
-                result += val + ','
-            }
-        });
-        // console.log(result);
-        console.log(w, h);
+        var data = imgData.data;
         for (let i = 0; i < w; i++) {
             for (let j = 0; j < h; j++) {
-            // 构建数据索引
-            let dataIndex = 4 * (i + j * w);
-            // A - alpha 通道（0-255; 0 是透明的，255 是完全可见的）
-            if(0 != data[dataIndex + 3])
-            {
-                null != r&& (data[dataIndex + 0] += r); // R - 红色（0-255）
-                null != g && (data[dataIndex + 1] += g);// G - 绿色（0-255）
-                null != b && (data[dataIndex + 2] += b);// B - 蓝色（0-255）
-                console.log('____%%%____');
-            }
+                // 构建数据索引
+                let dataIndex = 4 * (i + j * w);
+                // A - alpha 通道（0-255; 0 是透明的，255 是完全可见的）
+                if(0 != data[dataIndex + 3]) // 针对 alpha通道不是透明的才进行设置
+                {
+                    null != r && (data[dataIndex + 0] += r);// R - 红色（0-255）
+                    null != g && (data[dataIndex + 1] += g);// G - 绿色（0-255）
+                    null != b && (data[dataIndex + 2] += b);// B - 蓝色（0-255）
+                }
             }
         }
-        // for (var i=0;i<imgData.data.length;i+=4)
+        // for (var i = 0; i < imgData.data.length; i+=4)
         // {
         //     imgData.data[i+0]=155;
         //     imgData.data[i+1]=0;
@@ -96,9 +94,45 @@
         changeImageColor(155,0,0);
     }
 
+    function changeImageColorAndAlpha(r, g, b){
+        var img = document.getElementById("drawImage");
+        var w = img.width, h = img.height;
+        var imgData = ctx3.getImageData(0,0,w,h);
+        var data = imgData.data;
+        // for (let i = 0; i < w; i++) {
+        //     for (let j = 0; j < h; j++) {
+        //         // 构建数据索引
+        //         let dataIndex = 4 * (i + j * w);
+        //         // A - alpha 通道（0-255; 0 是透明的，255 是完全可见的）
+        //         if(isAlpha){
+        //             data[dataIndex + 3] += 255;// 设置完全可见
+        //         }
+        //         if(0 != data[dataIndex + 3])
+        //         {
+        //             null != r && (data[dataIndex + 0] += r);// R - 红色（0-255）
+        //             null != g && (data[dataIndex + 1] += g);// G - 绿色（0-255）
+        //             null != b && (data[dataIndex + 2] += b);// B - 蓝色（0-255）
+        //         }
+        //     }
+        // }
+        for (var i = 0; i < imgData.data.length; i += 4)
+        {
+            null != r && (data[i + 0] += r);// R - 红色（0-255）
+            null != g && (data[i + 1] += g);// G - 绿色（0-255）
+            null != b && (data[i + 2] += b);// B - 蓝色（0-255）
+            data[i + 3] = 255;// A - alpha 通道（0-255; 0 是透明的，255 是完全可见的）
+        }
+        ctx3.putImageData(imgData, 0, 0, 0, 0, img.width, img.height);
+    }
+
+    function changeWithAlpha(){
+        changeImageColorAndAlpha(205, 0, 0, true);
+    }
+
 
     window.onload = function(){
         imgCanvasLoad();
+        imgAlphaCanvasLoad();
     }
 </script>
 
@@ -106,6 +140,7 @@
         <img src='./img/car.png'alt='test' id='drawImage'/>
         <button onclick="copy()">复制</button>
         <button onclick="change()">图片变色</button>
+        <button onclick="changeWithAlpha()">图片变色(不设置alpha)</button>
     </div>
 </body>
 
