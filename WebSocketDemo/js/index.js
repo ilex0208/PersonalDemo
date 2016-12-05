@@ -55,11 +55,40 @@ function fun_clearALl() {
   $('#div_msg').empty();
 }
 
+/**
+ * 判断string能否被转成json
+ * @param {string} str
+ * @returns boolean
+ */
+function stringIsJson(str) {
+  if(!(Object.prototype.toString.call(str) === '[object String]')){
+    return false;
+  }
+  str = str.replace(/\s/g, '').replace(/\n|\r/, '');
+  if (/^\{(.*?)\}$/.test(str)){
+    return /"(.*?)":(.*?)/g.test(str);
+  }
+  if (/^\[(.*?)\]$/.test(str)) {
+    return str.replace(/^\[/, '')
+      .replace(/\]$/, '')
+      .replace(/},{/g, '}\n{')
+      .split(/\n/)
+      .map(function(s){return stringIsJson(s);})
+      .reduce(function(prev, curr){return !!curr; });
+  }
+  return false;
+}
+
 function chg_emoji(emo) {
-  var emoArray = emo.match(/\[.*?]/gi);
-  if (emoArray){
-    for (var i = 0; i < emoArray.length; i++) {
-      emo = emo.replace(emoArray[i], '<img src="' + emoji[emoArray[i]] + '" />');
+  if(stringIsJson(emo)){
+    var tempResult = JSON.parse(emo);
+    emo = JSON.stringify(tempResult);
+  }else{
+    var emoArray = emo.match(/\[.*?]/gi);
+    if (emoArray){
+      for (var i = 0; i < emoArray.length; i++) {
+        emo = emo.replace(emoArray[i], '<img src="' + emoji[emoArray[i]] + '" />');
+      }
     }
   }
   return emo;
@@ -68,7 +97,7 @@ function chg_emoji(emo) {
 function output(a, b) {
   var f, c = new Date, d = 'blue', e = '服务器';
   1 == b && (d = 'green', e = '你'),
-  f = '<div style=\'color:' + d + '\'>' + e + ' ' + c.getHours() + ':' + c.getMinutes() + ':' + c.getSeconds() + '</div>', 
+  f = '<div style=\'color:' + d + '\'>' + e + ' ' + c.getHours() + ':' + c.getMinutes() + ':' + c.getSeconds() + '</div>',
   $('#div_msg').append('<div style=\'margin-bottom:10px;position:relative;left:0px;\'>' + f + a + '</div>'),
   $('#div_msg').scrollTop($('#div_msg')[0].scrollHeight);
 }
