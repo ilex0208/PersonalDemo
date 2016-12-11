@@ -18,7 +18,7 @@ const __DEV__ = 'development';
 console.log('>创建webpack配置文件.');
 
 const webpackConfig = {
-  name: 'amos',
+  name: 'amostdemo',
   target: 'web',
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
