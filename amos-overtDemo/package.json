@@ -32,6 +32,6 @@
     "webpack-dev-server": "^1.14.0",
     "css-loader": "^0.23.0",
     "style-loader": "^0.13.0",
-    "amos-overt": "^2.1.1"
+    "amos-overt": "^3.0.1"
   }
 }
