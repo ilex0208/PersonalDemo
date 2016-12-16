@@ -1,0 +1,167 @@
+@charset "utf-8";
+/*css reset*/
+body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,button,textarea,footer{margin:0;padding:0;-webkit-appearance:none;}
+body{font-size: 16px;font-family: Helvetica; color:#333;/*-webkit-text-size-adjust: none;可以小于12号字体*/ min-width:320px;margin:0 auto;overflow-x:hidden;-webkit-touch-callout: none;-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);word-break:break-all;}
+h1,h2,h3,h4,h5,h6{font-size:1rem;}
+ul,ol{list-style:none}
+div,ul,li,a,button,input,textarea,p,img,select{-webkit-tap-highlight-color: rgba(0,0,0,0);box-sizing:border-box;}
+a{text-decoration:none;color:#1a1a1a}
+a:hover, a:active, a:focus{text-decoration: none;}
+img{vertical-align:middle;border:0;}
+button,input,select,textarea{font-size:100%; vertical-align:middle;outline:none;}
+textarea{resize:none}
+button,input[type="button"],input[type="reset"],input[type="submit"] {cursor:pointer;}
+table { border-collapse:collapse; border-spacing:0}
+header, footer, article, section, nav, menu, hgroup {display: block;clear:all;}
+body{-webkit-overflow-scrolling: touch;}/*苹果流畅滑动*/
+i,b,strong{font-style: normal;font-weight: normal;}
+/*快速定义*/
+.leiming::-webkit-scrollbar{height: 0;display:none;}/*隐藏滚动条*/
+input::-webkit-input-placeholder{color:#999;}/*placeholder颜色设置*/
+input:focus::-webkit-input-placeholder{color:transparent;}
+.clear:after{content:"";display:block;overflow:hidden;clear:both;}/*清除浮动*/
+.nowrap{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden;width: 100%;}/*字体超出隐藏*/
+/* 1px边框  bt:border-top bb:border-bottom*/
+.bt:before{content:"";width:100%;height:1px;background-color:#ccc;-webkit-transform:scaleY(.33333);transform:scaleY(.3333);transform-origin:top;-webkit-transform-origin:top;position:absolute;top:0;left:0;}
+.bb:after{content:"";width:100%;height:1px;background-color:#ccc;-webkit-transform:scaleY(.3333);transform:scaleY(.3333);transform-origin:bottom;-webkit-transform-origin:bottom;position:absolute;left:0;bottom:0;}
+.flex{display:-webkit-box;display:box;display:flex;}/*flex盒模型*/
+.flex_zi{display:block;width: 100%;-webkit-box-flex:1;box-flex:1;-webkit-flex: 1;flex: 1;}
+.justify{display:-webkit-box;display:box;display:flex;-webkit-box-pack:justify;justify-content:space-between;}/*两端对齐*/
+.line3{overflow : hidden;display: -webkit-box; display: box;display:flex; -webkit-line-clamp: 3;line-clamp: 3; -webkit-box-orient: vertical; box-orient: vertical;}
+/*全局缩放大小*/
+html{font-size: 125%;/*  font-size:6.5vw; */}
+a{display:block;}
+
+
+/*  谷歌浏览器快速匹配
+white-space,background,background-color,background-image,background-repeat,background-attachment,line-height,
+first-child(),last-child(),nth-last-child(),box-shadow,min-width,max-width,font-weight,min-height,top,flex,
+text-inden,font-family,font-style,font-size,list-style-type,list-style-image,list-style,border,box-sizing,
+max-height,transition,-webkit-transition,-webkit-keyframes,animation,-webkit-animation,cursor,right,color,
+vertical-align,border-collapse,width,height,padding,margin,margin-top,margin-right,margin-bottom,outline,
+text-overflow,background-position,background-size,text-align,text-decoration,text-transform,float,display,
+margin-left,visibility,position,left,bottom,opacity,nth-child(),
+*/
+#header{
+    width:500px;
+    height:60px;
+    z-index:999;
+    position: absolute;
+    left:-480px;
+    top:0;
+    font-size:16px;
+    font-family:'microsoft yahei';
+}
+#header:hover{
+    left:0;
+    -webkit-transition: left .6s;
+    -moz-transition: left .6s ;
+    -ms-transition: left .6s ;
+    -o-transition: left .6s ;
+    transition: left .6s ;
+    padding-right:0;
+}
+#header ul{
+    margin:0;
+}
+#header a{
+    line-height:60px;
+    color:#fff;
+}
+#header>div{
+    float:left;
+}
+#header li{
+    float:left;
+    position:relative;
+    margin:0;
+    background-color:#000;
+}
+#header li a{
+    display:block;
+    width:120px;
+    text-align:center;
+    font-size:16px;
+    padding:0;
+}
+#header li a:hover{
+    background-color:#363c41;
+}
+#header li a:hover + dl{
+    display:block;
+}
+#header .logo img{
+    vertical-align:top;
+    margin:10px;
+}
+#header dl{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:120px;
+    z-index: 999;
+    display:none;
+}
+#header dl:hover{
+    display:block;
+}
+#header dl a{
+    background-color:#57b382;
+    width:120px;
+    text-indent:1em;
+    text-align:left;
+    font-size:14px;
+    line-height:40px;
+    display:block;
+    padding:0;
+}
+#header dl a:hover{
+    background-color:#4ba575;
+}
+#header .loginBox{
+    float:right;
+    padding:0 15px;
+}
+
+.wrap{
+    width:1200px;
+    margin:0 auto;
+}
+
+#footer{
+    position:absolute;
+    width:100%;
+    left:0;
+    bottom:0;
+    padding:15px 0;
+    background-color:#000;
+    color:#aaa;
+}
+#footer .list{
+    display:block;
+}
+#footer li{
+    float:left;
+}
+#footer li a{
+    color:#ccc;
+    padding:4px 10px;
+    font-size:13px;
+}
+#footer p{
+    clear:both;
+    padding:4px 10px;
+    font-size:12px;
+}
+#header dl dd:before{
+    content:"";
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+    left:56px;
+    top:-8px;
+    border-right:8px solid transparent;
+    border-left:8px solid transparent;
+    border-bottom:8px solid #57b382;
+}

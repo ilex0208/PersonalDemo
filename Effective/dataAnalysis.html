@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amos - 数据分析室 -- by:Ilex</title>
+    <link href="./src/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./src/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./src/datawall.css">
+    <script src="./src/jquery.min.js"></script>
+    <script src="./src/echarts.min.js"></script>
+    <script src="./src/dark.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <ul class="nav">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="javascript:;">BigScreen</a>
+                <dl>
+                    <dd><a href="#">Main Screen</a></dd>
+                    <dd><a href="#">Data Wall</a></dd>
+                    <dd><a href="#">Map</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:;">接线图</a>
+                <dl>
+                    <dd><a href="#">编辑器</a></dd>
+                    <dd><a href="#">变电站列表</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:;">分析图表</a>
+                <dl>
+                    <dd><a href="#">实时数据</a></dd>
+                    <dd><a href="#">电流曲线</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <div class="kong" style="width:20px;float:left;height:60px;"></div>
+    </div>
+    <div id="screen">
+        <div id="cube" class="cube" style="transform: translateZ(0px) rotateX(0rad) rotateY(-4.71239rad);">
+            <div id="bg" class="face kong" alt="bg" data-transform="translateZ(-800px)" style="transform: translateZ(-800px);">
+                <img class="logo" src="./src/logo.png">
+            </div>
+            <div id="no1" class="face kong" data-transform="rotateY(90deg) translateZ(-800px)" style="transform: rotateY(90deg) translateZ(-800px);">
+                <div id="chart1" class="chart"></div>
+            </div>
+            <div id="no2" class="face kong" data-transform="rotateY(-90deg) translateZ(-800px)" style="transform: rotateY(-90deg) translateZ(-800px); outline: rgb(0, 0, 0) solid 10px;">
+                <div id="chart2" class="chart"></div>
+            </div>
+            <div id="no3" class="face kong" data-transform="rotateY(180deg) translateZ(-800px)" style="transform: rotateY(180deg) translateZ(-800px); outline: rgb(0, 0, 0) solid 10px;">
+                <div id="chart3" class="chart"></div>
+            </div>
+            <div id="no4" class="face kong" data-transform="rotateX(90deg) translateZ(-800px)" style="transform: rotateX(90deg) translateZ(-800px);">
+                <div id="chart4" class="chart"></div>
+            </div>
+            <div id="no5" class="face kong" data-transform="rotateX(-90deg) translateZ(-800px)" style="transform: rotateX(-90deg) translateZ(-800px); outline: rgb(0, 0, 0) solid 10px;">
+                <div id="chart5" class="chart"></div>
+            </div>
+            <div id="no6" class="face kong" data-transform="rotateY(180deg) translateZ(260px)" style="transform: rotateY(180deg) translateZ(260px); visibility: hidden;">
+                <div id="chart6" class="chart"></div>
+            </div>
+            <div id="schart1" class="face kong button" data-alt="no1" data-transform="translateY(-90px) translateZ(-700px) scale(0.8)"></div>
+            <div id="schart2" class="face kong button" data-alt="no2" data-transform="translateX(-360px) translateY(-90px) translateZ(-700px) scale(0.8)"></div>
+            <div id="schart3" class="face kong button" data-alt="no3" data-transform="translateX(360px) translateY(-90px) translateZ(-700px) scale(0.8)"></div>
+            <div id="schart4" class="face kong button" data-alt="no4" data-transform="translateY(160px) translateZ(-700px) scale(0.8)"></div>
+            <div id="schart5" class="face kong button" data-alt="no5" data-transform="translateX(-360px) translateY(160px) translateZ(-700px) scale(0.8)"></div>
+            <div id="schart6" class="face kong button" data-alt="no6" data-transform="translateX(360px) translateY(160px) translateZ(-700px) scale(0.8)"></div>
+        </div>
+    </div>
+    <script>
+     $.getJSON('./src/china.json', function (chinaJson) {
+            echarts.registerMap('china', chinaJson);
+        });
+</script>
+    <script type="text/javascript" src="./src/ilex.js"></script>
+    <script src="./src/datawall.js"></script>
+</body>
+
+</html>
