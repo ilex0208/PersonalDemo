@@ -38,7 +38,8 @@ webpackConfig.entry = {
   statictis: './statictis.js',
   mix: './mix.js',
   animate: './animate.js',
-  layout: './layout.js'
+  layout: './layout.js',
+  pstnTree: './pstnTree.js'
 };
 
 // ------------------------------------

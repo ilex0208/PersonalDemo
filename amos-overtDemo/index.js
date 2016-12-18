@@ -2,11 +2,11 @@ var datas = [
   {href: 'pstn.html',src: './img/teach/pstn.png',text: 'PSTN'},
   {href: 'container.html',src: './img/teach/container.png',text: '容器分组'},
   {href: 'performance.html',src: './img/teach/performance.png', text: '性能测试'},
-  {href: 'statictis.html',src: './img/teach/statictis.png',text: '设备关系'}, 
+  {href: 'statictis.html',src: './img/teach/statictis.png',text: '设备关系'},
   {href: 'mix.html',src: './img/teach/mix.png',text: '混合布局'},
   {href: 'animate.html',src: './img/teach/animate.png',text: '动画'},
-  {href: 'layout.html',src: './img/teach/layout.png',text: 'Layout'}
-  // {href: 'pstn.html',src: './img/teach/pstn.png',text: 'PSTN'},
+  {href: 'layout.html',src: './img/teach/layout.png',text: 'Layout'},
+  {href: 'pstnTree.html',src: './img/teach/pstn.png',text: 'PSTN_TREE'}
   // {href: 'pstn.html',src: './img/teach/pstn.png',text: 'PSTN'},
   // {href: 'pstn.html',src: './img/teach/pstn.png',text: 'PSTN'},
   // {href: 'pstn.html',src: './img/teach/pstn.png',text: 'PSTN'},

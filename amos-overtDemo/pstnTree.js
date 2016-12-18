@@ -89,6 +89,13 @@ function render() {
   linkNode(terminal3, router3);
 
   stage.add(scene);
+  renderTree(scene);
+}
+
+function renderTree(_scene){
+  let rootDom = document.getElementById('tree');
+  let treeName = 'testTree';
+  new _aot.Tree(rootDom, _scene, treeName, './img/tree/category.png');
 }
 
 render();
