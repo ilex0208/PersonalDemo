@@ -10,6 +10,7 @@ function render() {
   function node(x, y, img, name) {
     let node = new _aot.Node(name);
     node.setImage('./img/pstn/' + img, true);
+    node.setIcon('./img/leaf.gif', true);
     node.setLocation(x, y);
     node.fontColor = '0,0,255';
     scene.add(node);
