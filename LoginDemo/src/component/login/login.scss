@@ -1,0 +1,78 @@
+$box-width: 63rem;
+$box-height: 50rem;
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $box-width;
+  height: $box-height;
+  margin-top: -25rem;
+  margin-left: -31rem;
+  background: rgba(0, 0, 0, 0) url("bgb.png") no-repeat scroll 0 0;
+
+  .login-box-header {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    height: 6.5rem;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    font-size: 24px;
+    line-height: 1.5;
+    color: white;
+
+    img {
+      float: left;
+      padding-left: 2rem;
+    }
+  }
+
+  .login-form {
+    position: absolute;
+    top: 10rem;
+    width: 41.5rem;
+    height: 21.5rem;
+    margin: 3.8rem 0 0 8.6rem;
+
+    .btn-login {
+      display: inline-block;
+      width: 29rem;
+      height: 3.5rem;
+      margin: 1rem 0 0 11.4rem;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0) url("bgd.png") no-repeat scroll 0 0;
+      border: 0 none;
+    }
+  }
+
+  .login-key {
+    position: absolute;
+    top: 17.5rem;
+    bottom: 0;
+    left: 8.4rem;
+    color: #838383;
+  }
+
+}
+
+.g-signin2 {
+  display: inline-block;
+}
+
+.ant-form-inline {
+  display: inline-block;
+
+  .row {
+    margin: 10px;
+  }
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.w-350 {
+  width: 350px;
+}
+

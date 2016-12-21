@@ -1,0 +1,167 @@
+@import "config";
+// 设置一些常规方法
+@mixin postion0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin postion($top:0, $left:0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+// 常用变量
+$primary-color: #333;
+$top-color: #186659;
+$core-bg: linear-gradient(#CAEFEE, white);
+$border-color: #E9E9E9;
+$border-A: #AAA;
+$border-B: #BBB;
+$border-C: #CCC;
+$hover-color: #DCE8FC;
+
+/* 左侧导航固定宽度 */
+#leftMenu {
+  position: absolute;
+  top: $--top;
+  bottom: 0;
+  left: 0;
+  width: $--left;
+  background: $primary-color;
+}
+
+#maincontent {
+  @include postion($--aside);
+  margin: 0;
+  overflow: hidden;
+  background: $core-bg;
+  border: 1px solid #CCC;
+  border-radius: 0;
+}
+
+/* 右侧宽度自适应 */
+#rightWrap {
+  position: absolute;
+  top: $--top;
+  right: 0;
+  bottom: 0;
+  left: $--left;
+  width: calc(99.99% * 1 - 15rem);
+  height: calc(99.99% * 1 - 4.5rem);
+  padding: 10px 10px 0;
+  overflow-y: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  .ant-menu-submenu {
+    float: right;
+  }
+}
+
+/* 默认div hover添加border */
+.div-hover {
+  &:hover {
+    background-color: $hover-color;
+    border: 1px solid $border-C;
+    cursor: pointer;
+  }
+}
+
+#login {
+  width: 100%;
+  height: 100%;
+}
+
+#nmps {
+  width: 100%;
+  height: 100%;
+}
+
+#operation {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.header-nav-item {
+  display: inline-block;
+  .header-nav-second {
+    display: block;
+    &.on {
+      .header-nav-fn {
+        opacity: 1;
+        li {
+          cursor: pointer;
+          &:hover {
+            background-color: $hover-color;
+            border: 1px solid $border-A;
+          }
+        }
+      }
+    }
+    .header-nav-fn {
+      opacity: 0.3;
+    }
+  }
+  &.off {
+    .header-nav-second {
+      &.on {
+        .header-nav-fn {
+          opacity: 0.3;
+          li {
+            cursor: default;
+             &:hover {
+               border-color: rgba(255,255,255,0);
+               background: transparent;
+             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-nav-fn {
+  float: left;
+  margin: 0.6rem 0 0;
+  opacity: 0.3;
+}
+.header-nav-fn {
+  li{
+    width: 7rem;
+    height: 1.6rem;
+    line-height: 1.8rem;
+    padding: 0.1rem;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 0.1rem;
+    font-family: "Microsoft Yahei","Arial","simsun";
+    font-weight: bold;
+    color: #3F4D74;
+  }
+}
+.header_nav_fn {
+  li {
+    img{
+      display: inline-block;
+      float: left;
+      margin: 0.15rem 0.25rem 0 0;
+    }
+  }
+}

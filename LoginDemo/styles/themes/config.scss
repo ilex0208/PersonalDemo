@@ -1,0 +1,111 @@
+/**
+ * 设置底部、顶部和左侧高度
+ * 理解em 和 rem区别：
+ *    关键词：
+ *    em是相对于父元素的字体大小。事实上，根据W3标准 ，它们是相对于使用em单位的元素的字体大小。
+ *           rem是相对于根元素<html>
+ *
+ * 1、当使用 rem 单位，他们转化为像素大小取决于页根元素的字体大小，即 html 元素的字体大小。 根元素字体大小乘以你 rem 值。
+ *    例如，根元素的字体大小 16px，10rem 将等同于 160px，即 10 x 16 = 160。
+ *
+ * 2、当使用em单位时，像素值将是em值乘以使用em单位的元素的字体大小。
+ *    例如，如果一个 div 有 18px 字体大小，10em 将等同于 180px，即 10 × 18 = 180。
+ *
+ * 教程见：http://webdesign.tutsplus.com/zh-hans/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984
+ *
+ */
+// 前提： html元素字体默认 12px
+$--top: 4.5rem;// 4.5X12px=54px
+$--left: 15rem;// 15X12px=180px
+
+// 布局
+$--header: 10.4rem;
+$--aside: 3rem;
+$--article: 7.7rem;
+
+$small: 1rem;// 1*12px=12px
+$middle: 2rem;// 2*12px=24px
+$large: 3rem;// 3*12px=36px
+
+// header 常用变量
+$header-bgcolor: #282828;
+$header-bdcolor: #080808;
+$font-menu-item: 14px;
+$logo-width: 10rem;
+
+// 模块参数
+$small-space: 0.5rem;// 建议单个完整模块内部之间的间隔
+$middle-space: 1rem;// 两个模块之间的默认间隔
+$large-space: 2rem;// 两个模块之间的间隔
+
+// min-width
+$min-width: 100rem;
+
+$tinware: #606968;
+$vory: #E0D3BF;
+
+//系统主色彩搭配
+// style1 暗色系
+$style1-color0: #E4F2F1;
+$style1-color1: #AEBFBC;
+$style1-color2: #7CA6A6;
+$style1-color3: #55736D;
+$style1-color4: #060D08;
+
+// style2 春色萌芽系
+$style2-color0: #D4ECB8;
+$style2-color1: #AFC088;
+$style2-color2: #9E9E4F;
+$style2-color3: #5AAEA8;
+$style2-color4: #528F85;
+
+// style3 典雅彩色系
+$style3-color0: #FFDEAA;
+$style3-color1: #402516;
+$style3-color2: #6FBFAC;
+$style3-color3: #1D7F78;
+$style3-color4: #E5395F;
+
+// style4 黑色简约系
+$style4-color0: #BFB199;
+$style4-color4: #434664;
+$style4-color3: #323341;
+$style4-color1: #121212;
+$style4-color2: #000000;
+
+// style5 色彩激进系
+$style5-color0: #948B53;
+$style5-color1: #44615E;
+$style5-color2: #52090B;
+$style5-color3: #2E3161;
+$style5-color4: #1A0A4A;
+
+// style6 空旷系
+$style6-color0: #F7E4EA;
+$style6-color1: #F0E8B4;
+$style6-color2: #9591AB;
+$style6-color3: #7CC0D9;
+$style6-color4: #678BA3;
+
+// style7 冷色调系
+$style7-color0: #D5EAE1;
+$style7-color1: #A8CEBF;
+$style7-color2: #89CBC1;
+$style7-color3: #A7A692;
+$style7-color4: #0E7772;
+
+// style8 暗色调朦胧系
+$style8-color0: #FAF9B8;
+$style8-color1: #D5CF9F;
+$style8-color2: #AAAE95;
+$style8-color3: #797C83;
+$style8-color4: #50516D;
+
+// style9 深色系
+$style9-color0: #CCCCCC;
+$style9-color1: #DCDDE6;
+$style9-color2: #B9ADA6;
+$style9-color3: #9CCDD9;
+$style9-color4: #1A1A1A;
+
+
