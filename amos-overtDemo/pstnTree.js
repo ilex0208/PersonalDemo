@@ -91,6 +91,7 @@ function render() {
 
   stage.add(scene);
   renderTree(scene);
+  // renderThirdTree(scene);
 }
 
 function renderTree(_scene){
@@ -99,4 +100,22 @@ function renderTree(_scene){
   new _aot.Tree(rootDom, _scene, treeName, './img/tree/category.png');
 }
 
+function renderThirdTree(_scene){
+  let box = new _aot.third.ElementBox();
+  let tree = new _aot.third.Tree(box);
+  var dummy = new _aot.third.Dummy({ id: name, name: name });
+  this.box.add(dummy);
+
+  for (var i = 1; i <= 5; i++) {
+    var tnode = new _aot.third.Tnode({ name: 'ilexNode_' + i, clients: { 'MAPPINGID': i } });
+    tnode.setLocation(i * 100, 50);
+    tnode.setImage('c_olt');
+    tnode.setIcon('c_leaf');
+    tnode.setParent(dummy);
+    this.box.add(tnode);
+  }
+  this.tree.expandAll();
+  let rootDom = document.getElementById('tree');
+  rootDom.appendChild(tree);
+}
 render();
