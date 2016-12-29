@@ -18,6 +18,12 @@ const menus = [
   { key: 'reactHome', icon: 'notification', title: 'React', url:'https://facebook.github.io/react/' }
 ];
 
+/**
+ * iframe测试demo
+ *
+ * @class App
+ * @extends {Component}
+ */
 class App extends Component {
   constructor(props) {
     super(props);
@@ -70,16 +76,28 @@ class App extends Component {
 
   _handleClick = (e) => {
     console.log('click ', e);
-    let text = e.key;
+    let _key = e.key;
     let panes = this.state.panes;
-    let newPan = this.getContent(text)[0];
-    const activeKey = this.getContent(text)[1];
-    panes.push(newPan);
-    this.setState({
-      current: e.key,
-      panes,
-      activeKey
-    });
+    if(this.checkHasPane(`iframe${_key}`, panes)){
+      console.log('_key:', _key);
+      // 已存在,则设置当前
+      this.setState({ activeKey: `iframe${_key}` });
+    }else{
+      let newPan = this.getContent(_key)[0];
+      const activeKey = this.getContent(_key)[1];
+      panes.push(newPan);
+      this.setState({
+        current: e.key,
+        panes,
+        activeKey
+      });
+    }
+  }
+
+  checkHasPane = (key, panes) => {
+    console.log('key', key);
+    console.log('panes', panes);
+    return panes.some(pane => pane.key === key);
   }
 
   render() {
