@@ -1,5 +1,5 @@
-$box-width: 63rem;
-$box-height: 50rem;
+$box-width: 58rem;
+$box-height: 40rem;
 
 .login-box {
   position: absolute;
@@ -7,17 +7,19 @@ $box-height: 50rem;
   left: 50%;
   width: $box-width;
   height: $box-height;
-  margin-top: -25rem;
+  margin-top: -24rem;
   margin-left: -31rem;
-  background: rgba(0, 0, 0, 0) url("bgb.png") no-repeat scroll 0 0;
+  // background: rgba(0, 0, 0, 0) url("bgb.png") no-repeat scroll 0 0;
+  background-color: rgba(81, 98, 140, 0.7);
+  box-shadow: 0 0 0 2px rgba(81, 98, 140, 0.3);
 
   .login-box-header {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
+    top: 2rem;
+    left: 14rem;
     height: 6.5rem;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    // margin-top: 1.5rem;
+    // margin-left: 1.5rem;
     font-size: 24px;
     line-height: 1.5;
     color: white;
@@ -31,15 +33,29 @@ $box-height: 50rem;
   .login-form {
     position: absolute;
     top: 10rem;
-    width: 41.5rem;
+    width: 47rem;
     height: 21.5rem;
-    margin: 3.8rem 0 0 8.6rem;
+    margin: 2.8rem 0 0;
+
+    .ant-row {
+      margin-right: 22px;
+    }
+
+    .ant-form-item {
+      color: white;
+
+      .ant-form-item-label {
+        label {
+          color: white;
+        }
+      }
+    }
 
     .btn-login {
       display: inline-block;
       width: 29rem;
       height: 3.5rem;
-      margin: 1rem 0 0 11.4rem;
+      margin: 1rem 0 0 16rem;
       cursor: pointer;
       background: rgba(0, 0, 0, 0) url("bgd.png") no-repeat scroll 0 0;
       border: 0 none;
@@ -48,10 +64,10 @@ $box-height: 50rem;
 
   .login-key {
     position: absolute;
-    top: 17.5rem;
+    // top: 17.5rem;
     bottom: 0;
-    left: 8.4rem;
-    color: #838383;
+    left: 14.5rem;
+    // color: #838383;
   }
 
 }
