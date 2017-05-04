@@ -3,12 +3,9 @@
  * demo for iframe
  */
 import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom';
 import { Menu, Icon, Tabs } from 'antd';
 const MenuItem = Menu.Item;
 const TabPane = Tabs.TabPane;
-import DragableDecorator from './dragable';
-const {dragableContainersDecorator, dragableGroupDecorator} = DragableDecorator;
 
 const menus = [
   { key: 'binds', icon: 'tags', title: '必应', url:'http://www.bings.com' },
@@ -21,9 +18,6 @@ const menus = [
   { key: 'reactHome', icon: 'notification', title: 'React', url:'https://facebook.github.io/react/' }
 ];
 
-const opCont ={};
-const opGroup = {};
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,14 +27,6 @@ class App extends Component {
       panes: [{ title: 'HOME', content: '首页', key: 'home' }],
       allKeys: []
     };
-  }
-
-  componentDidMount() {
-    let ref1 = ReactDOM.findDOMNode(this.refs['containersDecorator']);
-    let ref2 = ReactDOM.findDOMNode(this.refs['groupDecorator']);
-    console.log('ref2', ref2);
-    this.containersDecorator(ref1);
-    this.groupDecorator(ref2);
   }
 
   onChange = (activeKey) => {
@@ -96,16 +82,6 @@ class App extends Component {
     });
   }
 
-  containersDecorator = (componentBackingInstance) => {
-    console.log('containersDecorator', componentBackingInstance);
-    dragableContainersDecorator(componentBackingInstance, opCont);
-  }
-
-  groupDecorator = (componentBackingInstance) => {
-    console.log('groupDecorator', componentBackingInstance);
-    dragableGroupDecorator(componentBackingInstance, opGroup);
-  }
-
   render() {
     return (
       <div>
@@ -134,9 +110,8 @@ class App extends Component {
             activeKey={this.state.activeKey}
             type="editable-card"
             onEdit={this.onEdit}
-            ref='containersDecorator'
           >
-            {this.state.panes.map(pane => <TabPane ref='groupDecorator' tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+            {this.state.panes.map(pane => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
           </Tabs>
         </section>
       </div>
