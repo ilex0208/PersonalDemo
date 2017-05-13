@@ -12,6 +12,8 @@ import { render } from 'react-dom';
 import App from './DragModal';
 // import App from './table';
 
+// import App from './select/index';
+
 // 引入主体样式文件
 import './index.css';
 

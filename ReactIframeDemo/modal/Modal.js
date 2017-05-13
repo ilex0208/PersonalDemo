@@ -20,7 +20,8 @@ export default class Modal extends React.Component {
     maskTransitionName: 'fade',
     confirmLoading: false,
     visible: false,
-    dragable: false
+    dragable: false,
+    onlyDragheader: true
   }
 
   static propTypes = {
@@ -36,7 +37,9 @@ export default class Modal extends React.Component {
     footer: PropTypes.node,
     title: PropTypes.node,
     closable: PropTypes.bool,
-    dragable: PropTypes.bool
+    dragable: PropTypes.bool,
+    onlyDragheader: PropTypes.bool,
+    dragableOps: PropTypes.object
   }
 
   static contextTypes = {
@@ -70,7 +73,7 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    let { okText, cancelText, confirmLoading, footer, visible, dragable } = this.props;
+    let { prefixCls, okText, cancelText, confirmLoading, footer, visible, dragable, onlyDragheader, dragableOps } = this.props;
     console.log('dragable', dragable);
     if (this.context.antLocale && this.context.antLocale.Modal) {
       okText = okText || this.context.antLocale.Modal.okText;
@@ -97,12 +100,16 @@ export default class Modal extends React.Component {
       </Button>
     ];
 
+    const dragOpts = onlyDragheader ? Object.assign({}, dragableOps, { handle: `.${prefixCls}-header` }) : dragableOps;
+    console.log('dragOpts:', dragOpts);
+
     return (
       <Dialog
         onClose={this.handleCancel}
         footer={footer || defaultFooter}
         {...this.props}
         dragable={dragable}
+        dragableOps={dragOpts}
         visible={visible}
         mousePosition={mousePosition}
       />
