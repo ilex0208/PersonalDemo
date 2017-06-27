@@ -1,0 +1,105 @@
+.amos-table-actionbar {
+  width: 100%;
+  padding: 6px 0 4px;
+  margin-bottom: 12px;
+}
+
+.amos-table-actionbar-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.amos-table-column-picker {
+  position: relative;
+  float: right;
+
+  .amosicon-list {
+    margin-right: 5px;
+    color: #999;
+    vertical-align: middle;
+  }
+}
+
+.amos-table-column-picker-title {
+  color: blue;
+  vertical-align: middle;
+}
+
+.amos-table-column-picker-trigger {
+  position: relative;
+  z-index: 12;
+  padding: 4px 10px;
+  cursor: pointer;
+  background: white;
+}
+
+.amos-table-column-picker-dropdown {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  z-index: 11;
+  min-width: 200px;
+  min-height: 200px;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 1px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+
+  .ant-tree {
+    float: right;
+
+    &.no-group {
+      float: left;
+    }
+  }
+
+  .ant-tree li span.kuma-tree-switcher {
+    display: none;
+  }
+}
+
+.amos-table-searchbar {
+  position: relative;
+  float: right;
+  width: 355px;
+
+  .ant-input {
+    height: 32px;
+  }
+
+  .amosicon-search {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    line-height: 16px;
+    color: #DDD;
+    cursor: pointer;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.amos-table-linkbar {
+  float: right;
+  margin-right: 10px;
+  line-height: 30px;
+
+  a {
+    vertical-align: middle;
+  }
+}
+
+.amos-table-linkbar-cutoff {
+  display: inline-block;
+  height: 14px;
+  margin: 0 12px;
+  vertical-align: middle;
+  border-right: 2px solid yellow;
+}
+
+.amos-table-linkbar-item {
+  display: inline-block;
+  cursor: pointer;
+}

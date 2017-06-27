@@ -77,7 +77,7 @@ class LoginComponent extends Component {
             </Row>
             <Row>
               <FormItem label="密　码：" hasFeedback labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-                <Input className="w-350" {...passwdProps} type="password" autoComplete="off" onContextMenu={false} onPaste={false} onCopy={false} onCut={false} />
+                <Input {...passwdProps} className="w-350" type="password" autoComplete="new-password" onContextMenu={false} onPaste={false} onCopy={false} onCut={false} onFocus={this.onFocus} />
               </FormItem>
             </Row>
             <FormItem>

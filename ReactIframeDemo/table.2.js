@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import AmosTable from 'amos-table';
-import 'amos-table/lib/style/actionbar.scss';
-// import 'amos-table/lib/style/actionbar.css';
+import { Table, Button, Pagination } from 'antd';
+
+import ActionBar from './custom/ActionBar';
+
+import {filterColumns, getSelectedKeys} from './custom/utils';
 
 
 const customPage = {
@@ -48,7 +50,9 @@ class App extends Component {
     this.state = {
       selectedRowKeys: [],  // 这里配置默认勾选列
       loading: false,
-      current: 0
+      current: 0,
+      columns: _columns,
+      originalCol: _columns
     };
   }
 
@@ -64,21 +68,67 @@ class App extends Component {
     });
   }
 
+  start = () => {
+    this.setState({ loading: true });
+    // 模拟 ajax 请求，完成后清空
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false
+      });
+    }, 1000);
+  }
+
+  handleColumnPickerChange = (checkedKeys, groupName) => {
+
+    const original = this.state.originalCol;
+    const columns = filterColumns(checkedKeys, groupName, original);
+
+    const selectedKeys = getSelectedKeys(columns);
+
+    if (selectedKeys.length === 0) {
+      return;
+    }
+
+    this.setState({
+      columns
+    });
+  }
 
   render() {
-    const { selectedRowKeys } = this.state;
+    const { loading, selectedRowKeys } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange
     };
+    const hasSelected = selectedRowKeys.length > 0;
 
     const actionBarProps = {
       showColumnPicker: true,
+      columns: _columns,
+      handleColumnPickerChange: this.handleColumnPickerChange,
+      checkboxColumnKey: 'selection-column',
+      width: 600,
+      locale: {
+        customeColumn: '自定义列',
+        more: '更多'
+      },
       defaultColumns: ['name']
     };
     return (
       <div>
-        <AmosTable rowSelection={rowSelection} columns={_columns} dataSource={data} pagination={customPage} actionBarProps={actionBarProps} />
+        <div style={{ marginBottom: 16 }}>
+          <Button
+            type="primary" onClick={this.start}
+            disabled={!hasSelected} loading={loading}
+          >操作</Button>
+          <span style={{ marginLeft: 8 }}>{hasSelected ? `选择了 ${selectedRowKeys.length} 个对象` : ''}</span>
+          <ActionBar {...actionBarProps} />
+        </div>
+        <Table rowSelection={rowSelection} columns={this.state.columns} dataSource={data} pagination={customPage} />
+        {
+          /*<Pagination current={this.state.current} onChange={this.onChange} total={50} />*/
+        }
       </div>
     );
   }

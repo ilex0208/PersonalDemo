@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import AmosTable from 'amos-table';
-import 'amos-table/lib/style/actionbar.scss';
-// import 'amos-table/lib/style/actionbar.css';
-
+import { Table, Button, Pagination } from 'antd';
 
 const customPage = {
   size: 'small',
@@ -20,7 +17,7 @@ const customPage = {
   pageSizeOptions: ['10', '20', '30', '40'] // 指定每页可以显示多少条
 };
 
-const _columns = [{
+const columns = [{
   title: '姓名',
   dataIndex: 'name'
 }, {
@@ -64,21 +61,37 @@ class App extends Component {
     });
   }
 
+  start = () => {
+    this.setState({ loading: true });
+    // 模拟 ajax 请求，完成后清空
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false
+      });
+    }, 1000);
+  }
 
   render() {
-    const { selectedRowKeys } = this.state;
+    const { loading, selectedRowKeys } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange
     };
-
-    const actionBarProps = {
-      showColumnPicker: true,
-      defaultColumns: ['name']
-    };
+    const hasSelected = selectedRowKeys.length > 0;
     return (
       <div>
-        <AmosTable rowSelection={rowSelection} columns={_columns} dataSource={data} pagination={customPage} actionBarProps={actionBarProps} />
+        <div style={{ marginBottom: 16 }}>
+          <Button
+            type="primary" onClick={this.start}
+            disabled={!hasSelected} loading={loading}
+          >操作</Button>
+          <span style={{ marginLeft: 8 }}>{hasSelected ? `选择了 ${selectedRowKeys.length} 个对象` : ''}</span>
+        </div>
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} pagination={customPage} />
+        {
+          /*<Pagination current={this.state.current} onChange={this.onChange} total={50} />*/
+        }
       </div>
     );
   }

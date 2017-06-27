@@ -1,0 +1,17 @@
+{
+  "name": "websocketdemo",
+  "version": "1.0.0",
+  "description": "websocketdemo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "ilex",
+  "license": "ISC",
+  "dependencies": {
+    "amos-build": "^1.x.x"
+  },
+  "devDependencies": {
+
+  }
+}

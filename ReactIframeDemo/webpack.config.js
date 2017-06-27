@@ -2,85 +2,39 @@
  * webpack 打包配置文件
  * @author ilex
  */
+const {OpenUrlPlugins, browser} = require('ray-plugins');
+var amosConfig = require('amos-build/lib/amosConfig');
 
-const path = require('path');
-const webpack = require('webpack');
-const __path = 'dist';
-// ------------------------------------
-// Environment
-// ------------------------------------
-const __DEV__ = 'development';
+var _ENV_ = process.env.NODE_ENV || 'development';
 
-// 发布模式
-// process.env.NODE_ENV = 'production';
+amosConfig.name = 'intelligentDespatch';
 
-console.log('>创建webpack配置文件.');
-
-const webpackConfig = {
-  name: 'ilex',
-  target: 'web',
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json']
-  },
-  module: {},
-  plugins: []
-};
 // ------------------------------------
 // 入口点
 // ------------------------------------
-webpackConfig.entry = {
+amosConfig.entry = {
   index: './index.js'
 };
 
 // ------------------------------------
-// Bundle Output
+// 添加externals
 // ------------------------------------
-webpackConfig.output = {
-  path: path.join(__dirname, __path), // 编译到当前目录
-  publicPath: '/dist/', // 服务器根路径
-  filename: '[name].js' // 编译后的文件名字
-};
+amosConfig.externals = {};
 
-// ------------------------------------
-// Loaders
-// ------------------------------------
-webpackConfig.module.loaders = [
-  { test: /\.js$/, exclude: /node_modules/, loader: 'babel', cacheDirectory: true },
-  { test: /\.css$/, loader: 'style-loader!css-loader?sourceMap' },
-  { test: /\.less$/, loader: 'style-loader!css-loader!less-loader?sourceMap' },
-  { test: /\.(jpe?g|png|gif)$/, loader: 'url-loader?limit=8192&name=[path][name].[ext]' },
-  { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
-  { test: /\.(woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=[path][name].[ext]' }
-];
-
-// 启动发布模式
-if (process.env.NODE_ENV === 'production') {
-  console.log('>启动发布模式(production).');
-  webpackConfig.plugins.push(
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
-  );
-  module.exports.devtool = '#source-map';
-}
-
-if(__DEV__){
-  console.log('>启动实时预览插件(development) (HMR, NoErrors).');
-  webpackConfig.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+if('development' === _ENV_){
+  amosConfig.devServer = {
+    colors: true,
+    contentBase: '.',
+    historyApiFallback: true,
+    inline: true,
+    progress: true,
+    hot: true,
+    port: 9001,
+    host: '0.0.0.0'
+  };
+  amosConfig.plugins.push(
+    new OpenUrlPlugins({url: 'http://localhost:9001', browser: browser.chrome}) // browser.chrome | browser.firefox
   );
 }
 
-module.exports = webpackConfig;
+module.exports = amosConfig;
