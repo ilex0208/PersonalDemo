@@ -1,0 +1,421 @@
+.amos-upload {
+  font-size: 12px;
+}
+
+.amos-upload > span {
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+.amos-upload input[type="file"] {
+  cursor: pointer;
+}
+
+.amos-upload.amos-upload-select {
+  display: inline-block;
+}
+
+.amos-upload.amos-upload-select-picture-card {
+  border: 1px dashed #D9D9D9;
+  width: 96px;
+  height: 96px;
+  padding: 24px 0;
+  border-radius: 6px;
+  background-color: #FBFBFB;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.amos-upload.amos-upload-select-picture-card:hover {
+  border-color: #2DB7F5;
+}
+
+.amos-upload.amos-upload-drag {
+  border: 1px dashed #D9D9D9;
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.amos-upload.amos-upload-drag.amos-upload-drag-hover:not(.amos-upload-disabled) {
+  border: 2px dashed #57C5F7;
+}
+
+.amos-upload.amos-upload-drag.amos-upload-disabled {
+  cursor: not-allowed;
+}
+
+.amos-upload.amos-upload-drag > span {
+  display: table;
+  height: 100%;
+}
+
+.amos-upload.amos-upload-drag .amos-upload-drag-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.amos-upload.amos-upload-drag:not(.amos-upload-disabled):hover {
+  border-color: #57C5F7;
+}
+
+.amos-upload.amos-upload-drag p.amos-upload-drag-icon {
+  height: 60px;
+  margin-bottom: 24px;
+}
+
+.amos-upload.amos-upload-drag p.amos-upload-drag-icon .amosicon {
+  margin-top: -5px;
+  font-size: 80px;
+  color: #57C5F7;
+}
+
+.amos-upload.amos-upload-drag p.amos-upload-text {
+  font-size: 14px;
+}
+
+.amos-upload.amos-upload-drag p.amos-upload-hint {
+  font-size: 12px;
+  color: #999;
+}
+
+.amos-upload.amos-upload-drag .amosicon-plus {
+  font-size: 30px;
+  color: #CCC;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.amos-upload.amos-upload-drag .amosicon-plus:hover {
+  color: #999;
+}
+
+.amos-upload.amos-upload-drag:hover .amosicon-plus {
+  color: #999;
+}
+
+.amos-upload-list {
+  overflow: hidden;
+}
+
+.amos-upload-list-item {
+  margin-top: 8px;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.amos-upload-list-item-info {
+  height: 22px;
+  padding: 0 4px;
+  line-height: 22px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.amos-upload-list-item-info .amosicon-paper-clip {
+  margin-right: 4px;
+  font-size: 12px;
+  color: #999;
+}
+
+.amos-upload-list-item-info .amosicon-cross {
+  display: inline-block;
+  font-size: 12px;
+  font-size: 10px \9;
+  -webkit-transform: scale(0.83333333) rotate(0deg);
+  -ms-transform: scale(0.83333333) rotate(0deg);
+  transform: scale(0.83333333) rotate(0deg);
+  /* IE6-IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+  zoom: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+  float: right;
+  color: #999;
+  line-height: 22px;
+}
+
+:root .amos-upload-list-item-info .amosicon-cross {
+  -webkit-filter: none;
+  filter: none;
+}
+
+:root .amos-upload-list-item-info .amosicon-cross {
+  font-size: 12px;
+}
+
+.amos-upload-list-item-info .amosicon-cross:hover {
+  color: #666;
+}
+
+.amos-upload-list-item:hover .amos-upload-list-item-info {
+  background-color: #EAF8FE;
+}
+
+.amos-upload-list-item:hover .amosicon-cross {
+  opacity: 1;
+}
+
+.amos-upload-list-item-error,
+.amos-upload-list-item-error .amosicon-paper-clip {
+  color: #F50;
+}
+
+.amos-upload-list-item-error .amosicon-cross {
+  opacity: 1;
+}
+
+.amos-upload-list-item-progress {
+  padding: 0 8px 0 20px;
+  margin-top: -2px;
+  margin-bottom: 1px;
+  font-size: 12px;
+}
+
+.amos-upload-list-item-progress .ant-progress-line-inner {
+  vertical-align: middle;
+}
+
+.amos-upload-list-picture .amos-upload-list-item,
+.amos-upload-list-picture-card .amos-upload-list-item {
+  position: relative;
+  height: 66px;
+  padding: 8px;
+  border: 1px solid #D9D9D9;
+  border-radius: 6px;
+}
+
+.amos-upload-list-picture .amos-upload-list-item:hover,
+.amos-upload-list-picture-card .amos-upload-list-item:hover {
+  background: transparent;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-info,
+.amos-upload-list-picture-card .amos-upload-list-item-info {
+  padding: 0;
+}
+
+.amos-upload-list-picture .amos-upload-list-item:hover .amos-upload-list-item-info,
+.amos-upload-list-picture-card .amos-upload-list-item:hover .amos-upload-list-item-info {
+  background: transparent;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-uploading,
+.amos-upload-list-picture-card .amos-upload-list-item-uploading {
+  border-style: dashed;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-thumbnail,
+.amos-upload-list-picture-card .amos-upload-list-item-thumbnail {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-thumbnail img,
+.amos-upload-list-picture-card .amos-upload-list-item-thumbnail img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-thumbnail.amosicon:before,
+.amos-upload-list-picture-card .amos-upload-list-item-thumbnail.amosicon:before {
+  line-height: 48px;
+  font-size: 24px;
+  color: #999;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-name,
+.amos-upload-list-picture-card .amos-upload-list-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 0 0 8px;
+  line-height: 42px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding-left: 48px;
+  padding-right: 8px;
+  max-width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-uploading .amos-upload-list-item-name,
+.amos-upload-list-picture-card .amos-upload-list-item-uploading .amos-upload-list-item-name {
+  line-height: 28px;
+}
+
+.amos-upload-list-picture .amos-upload-list-item-progress,
+.amos-upload-list-picture-card .amos-upload-list-item-progress {
+  padding-left: 56px;
+  margin-top: 0;
+}
+
+.amos-upload-list-picture .amosicon-cross,
+.amos-upload-list-picture-card .amosicon-cross {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  line-height: 1;
+}
+
+.amos-upload-list-picture-card {
+  display: inline;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  margin: 0 8px 8px 0;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info {
+  height: 100%;
+  position: relative;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info:before {
+  content: ' ';
+  position: absolute;
+  z-index: 1;
+  background-color: #808080;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info .amosicon-eye-o,
+.amos-upload-list-picture-card .amos-upload-list-item-info .amosicon-delete {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 16px;
+  width: 16px;
+  line-height: 1;
+  color: #eee;
+  opacity: 0;
+  margin-top: -8px;
+  margin-left: -22px;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info .amosicon-eye-o:hover,
+.amos-upload-list-picture-card .amos-upload-list-item-info .amosicon-delete:hover {
+  color: #fff;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info .amosicon-delete {
+  left: 50%;
+  margin-left: 6px;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info:hover:before {
+  opacity: .8;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-info:hover .amosicon-eye-o,
+.amos-upload-list-picture-card .amos-upload-list-item-info:hover .amosicon-delete {
+  opacity: 1;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-thumbnail,
+.amos-upload-list-picture-card .amos-upload-list-item-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: static;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-name {
+  display: none;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-uploading.amos-upload-list-item {
+  background-color: #FBFBFB;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-uploading .amos-upload-list-item-info {
+  height: auto;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-uploading .amos-upload-list-item-info:before,
+.amos-upload-list-picture-card .amos-upload-list-item-uploading .amos-upload-list-item-info .amosicon-eye-o,
+.amos-upload-list-picture-card .amos-upload-list-item-uploading .amos-upload-list-item-info .amosicon-delete {
+  display: none;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-uploading-text {
+  margin-top: 18px;
+  color: #999;
+}
+
+.amos-upload-list-picture-card .amos-upload-list-item-progress {
+  padding-left: 0;
+}
+
+.amos-upload-list .amos-upload-success-icon {
+  color: #87d068;
+  font-weight: bold;
+}
+
+.amos-upload-list .amos-upload-margin-top-enter {
+  -webkit-animation: uploadMarginTopIn 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  animation: uploadMarginTopIn 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+
+.amos-upload-list .amos-upload-margin-top-leave {
+  -webkit-animation: uploadMarginTopOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  animation: uploadMarginTopOut 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+
+@-webkit-keyframes uploadMarginTopIn {
+  from {
+    margin-top: -25px;
+    opacity: 0;
+  }
+}
+
+@keyframes uploadMarginTopIn {
+  from {
+    margin-top: -25px;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes uploadMarginTopOut {
+  to {
+    margin-top: -25px;
+    opacity: 0;
+  }
+}
+
+@keyframes uploadMarginTopOut {
+  to {
+    margin-top: -25px;
+    opacity: 0;
+  }
+}

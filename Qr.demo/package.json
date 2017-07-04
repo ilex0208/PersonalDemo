@@ -13,11 +13,9 @@
     "amos-build": "^1.2.37"
   },
   "dependencies": {
-    "amos-antd": "^1.1.8",
     "amos-core": "^1.3.26",
-    "md5": "^2.2.1",
-    "multer": "^1.3.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "print.js": "^1.0.18",
+    "react": "~15.3.2",
+    "react-dom": "~15.3.2"
   }
 }

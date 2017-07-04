@@ -10,7 +10,8 @@ import { render } from 'react-dom';
 // import App from './Test';
 // import App from './AppAmosTab';
 // import App from './DragModal';
-import App from './table';
+// import App from './table';
+import App from './InputDemo';
 
 // import App from './select/index';
 
