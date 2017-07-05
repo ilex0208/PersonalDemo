@@ -46,7 +46,10 @@ class Demo extends React.Component {
   }
 
   printQRcode = (result) => {
-    let newWindow = window.open('打印二维码', '_blank');
+    // let newWindow = window.open('打印二维码', '_blank');
+    let ifre = document.createElement('iframe');
+    // ifre.appendChild(result);
+    let newWindow = ifre.contentWindow;
     newWindow.document.write(result);
     newWindow.document.close();
     setTimeout(function(){

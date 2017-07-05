@@ -32,7 +32,7 @@ defaultConfig.name = 'amos-init';
 // 入口点
 // ------------------------------------
 defaultConfig.entry = {
-  app: './demo.js'
+  app: './index.js'
 };
 
 // ------------------------------------

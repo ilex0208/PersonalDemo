@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>print</title>
+  <script>
+    function doPrint(){
+      // set portrait orientation
+      jsPrintSetup.setOption('orientation', jsPrintSetup.kPortraitOrientation);
+      // set top margins in millimeters
+      jsPrintSetup.setOption('marginTop', 15);
+      jsPrintSetup.setOption('marginBottom', 15);
+      jsPrintSetup.setOption('marginLeft', 20);
+      jsPrintSetup.setOption('marginRight', 10);
+      // set page header
+      jsPrintSetup.setOption('headerStrLeft', 'My custom header');
+      jsPrintSetup.setOption('headerStrCenter', '');
+      jsPrintSetup.setOption('headerStrRight', '&PT');
+      // set empty page footer
+      jsPrintSetup.setOption('footerStrLeft', '');
+      jsPrintSetup.setOption('footerStrCenter', '');
+      jsPrintSetup.setOption('footerStrRight', '');
+      // Suppress print dialog
+      jsPrintSetup.setSilentPrint(true);
+      // Do Print
+      jsPrintSetup.print();
+      // Restore print dialog
+      jsPrintSetup.setSilentPrint(false);
+    }
+  </script>
+</head>
+
+<body>
+
+  <div style="width:640px;height:624px;margin:20px auto;">
+    fasdfasdasdf
+  </div>
+  <button onclick="doPrint()">打印</button>
+</body>
+
+</html>

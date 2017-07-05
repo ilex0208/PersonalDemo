@@ -3,6 +3,9 @@
 import React from 'react';
 
 import { generateQRcode } from 'amos-core';
+import p from './pj/js/init';
+
+const printJS = p.init;
 
 // TODO: live update demo
 class Demo extends React.Component {
@@ -16,7 +19,6 @@ class Demo extends React.Component {
   };
 
   onClick = () => {
-    let _self = this;
 
     let values = [];
     const prifix = '123456789000';
@@ -30,29 +32,12 @@ class Demo extends React.Component {
       level: 'H'
     };
 
-    let result = [];
-
     values.forEach((v) => {
       options.value = v;
       const data = generateQRcode(options);
-      result.push(_self.generateQrTags(v, data));
+      printJS(data, 'image');
     });
 
-    this.printQRcode(result.join(''));
-  }
-
-  generateQrTags = (value, cdata) => {
-    return '<div style="height: 110px; text-align: center; padding: 3px 5px;"><p style="font-size: 10px; text-align: center; margin: 0; padding:0;">'+ value +'</p><img src="'+ cdata +'"/></div>';
-  }
-
-  printQRcode = (result) => {
-    let newWindow = window.open('打印二维码', '_blank'); // _self
-    newWindow.document.write(result);
-    newWindow.document.close();
-    setTimeout(function(){
-      newWindow.print();
-      newWindow.close();
-    }, 100);
   }
 
   render() {

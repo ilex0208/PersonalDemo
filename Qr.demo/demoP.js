@@ -1,8 +1,12 @@
 'use strict';
 
 import React from 'react';
-
 import { generateQRcode } from 'amos-core';
+import p from './pj/js/init';
+
+const printJS = p.init;
+
+import './pj/css/print.css';
 
 // TODO: live update demo
 class Demo extends React.Component {
@@ -20,7 +24,7 @@ class Demo extends React.Component {
 
     let values = [];
     const prifix = '123456789000';
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < 10; i++){
       values.push(prifix + i);
     }
     const options = {
@@ -38,21 +42,16 @@ class Demo extends React.Component {
       result.push(_self.generateQrTags(v, data));
     });
 
-    this.printQRcode(result.join(''));
+    printJS({
+      printable: result.join(''),
+      showModal: true,
+      type: 'html'
+    });
+
   }
 
   generateQrTags = (value, cdata) => {
     return '<div style="height: 150px; text-align: center; padding: 3px 5px; display: table; width: 100%; margin-top: 20px;"><div style="display: table-cell; vertical-align: middle;"><p style="font-size: 10px; text-align: center; margin: 0; padding:0;">'+ value +'</p><img src="'+ cdata +'"/></div></div>';
-  }
-
-  printQRcode = (result) => {
-    let newWindow = window.open('打印二维码', '_blank');
-    newWindow.document.write(result);
-    newWindow.document.close();
-    setTimeout(function(){
-      newWindow.print();
-      newWindow.close();
-    }, 100);
   }
 
   render() {
