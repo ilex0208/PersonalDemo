@@ -2,39 +2,46 @@
  * webpack 打包配置文件
  * @author ilex
  */
-const {OpenUrlPlugins, browser} = require('ray-plugins');
-var amosConfig = require('amos-build/lib/amosConfig');
+const { OpenUrlPlugins, browser, tools } = require('ray-plugins');
+var simpleConfig = require('amos-build/lib/simpleConfig');
 
 var _ENV_ = process.env.NODE_ENV || 'development';
 
-amosConfig.name = 'intelligentDespatch';
+// 启动端口
+const port = 3009;
+
+var config = {
+  tpl: './tpl.html',
+  toFile: 'index.html',
+  port: port,
+  sourceMap: true
+};
+
+var defaultConfig = simpleConfig(config);
+
+defaultConfig.name = 'intelligentDespatch';
 
 // ------------------------------------
 // 入口点
 // ------------------------------------
-amosConfig.entry = {
+defaultConfig.entry = {
   index: './index.js'
 };
 
-// ------------------------------------
-// 添加externals
-// ------------------------------------
-amosConfig.externals = {};
-
 if('development' === _ENV_){
-  amosConfig.devServer = {
+  defaultConfig.devServer = {
     colors: true,
     contentBase: '.',
     historyApiFallback: true,
     inline: true,
     progress: true,
     hot: true,
-    port: 9001,
+    port: port,
     host: '0.0.0.0'
   };
-  amosConfig.plugins.push(
-    new OpenUrlPlugins({url: 'http://localhost:9001', browser: browser.chrome}) // browser.chrome | browser.firefox
+  defaultConfig.plugins.push(
+    new OpenUrlPlugins({url: 'http://localhost:' + port, browser: browser.chrome}) // browser.chrome | browser.firefox
   );
 }
 
-module.exports = amosConfig;
+module.exports = defaultConfig;

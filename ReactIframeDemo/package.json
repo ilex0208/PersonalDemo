@@ -8,9 +8,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack -p --progress --colors",
-    "start": "webpack-dev-server --progress --colors --port 9001 --inline --content-base .",
-    "start2": "webpack-dev-server --progress --colors --port 9001 --inline --hot --quiet",
-    "start3": "webpack-dev-server --progress --colors --port 9001 --host 0.0.0.0 --inline --content-base ."
+    "start": "webpack-dev-server"
   },
   "devDependencies": {
     "amos-build": "1.x.x",
@@ -21,6 +19,7 @@
     "amos-icon": "^1.0.3",
     "amos-table": "^1.0.3",
     "amos-tabs": "^1.0.4",
+    "amos-time-picker": "^1.0.0",
     "amos-tool": "^1.2.4",
     "animate.css": "^3.5.1",
     "antd": "^1.11.2",
@@ -29,6 +28,7 @@
     "object-assign": "^4.0.1",
     "ray-dragable": "^1.0.3",
     "ray-dragany": "^1.0.0",
+    "rc-util": "^4.0.4",
     "react-draggable": "^2.2.3",
     "react-draggable2": "^0.7.0-alpha1",
     "whatwg-fetch": "^1.0.0"

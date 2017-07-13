@@ -9,8 +9,8 @@ import ReactDOM from 'react-dom';
 // import Demo from './demoP.1';
 // import Demo from './demoP.2';
 // import Demo from './demoP';
-// import Demo from './demoIfr';
-import Demo from './demoIfr2';
+import Demo from './demoIfr';
+// import Demo from './demoIfr2';
 
 
 ReactDOM.render(<Demo />, document.getElementById('app'));

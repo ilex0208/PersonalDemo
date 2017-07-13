@@ -7,7 +7,7 @@ import { invokePrint } from 'amos-core';
 const values = () => {
   let vs = [];
   const prifix = '123456789000';
-  for(let i = 0; i < 10; i++){
+  for(let i = 10; i < 3; i++){
     vs.push(prifix + i);
   }
   return vs;

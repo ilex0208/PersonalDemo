@@ -1,0 +1,237 @@
+@import "./theme/theme.scss";
+
+$prefixClass: clock-timepicker;
+
+/* settings */
+$container-bg: $B000;
+$header-bg: $B050;
+$container-fg: #333;
+$container-border: 1px solid $B400;
+$container-padding: 6px 48px 8px 10px;
+$monthView-width: 231px;
+$clock-width: 208px;
+$clock-height: 256px;
+$digits-size: 48px;
+$digits-font-size: 24px;
+$cell-height: 26px;
+$cell-spacing: 2px;
+$cell-hover-bg: $H050;
+$color-active: $H500;
+
+.#{$prefixClass} {
+  display: inline-block;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 28px;
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    cursor: text;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.#{$prefixClass}-panel {
+  position: absolute;
+  z-index: 1070;
+  width: 170px;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &-inner {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: 0 1px 5px #CCC;
+    background-clip: padding-box;
+  }
+}
+
+.time-picker {
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.time-picker-pane {
+  position: absolute;
+  z-index: 999;
+
+  &.datetime {
+    width: 444px;
+  }
+
+  &.hide {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.clock {
+  z-index: 1000;
+  float: left;
+  width: $clock-width;
+  height: $clock-height;
+  margin-top: -1px;
+  background-color: $container-bg;
+  border: $container-border;
+  border-left: none;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  transition: visibility 0.1s, opacity 0.1s ease-in;
+}
+
+.digits {
+  padding: 1rem 0;
+  text-align: center;
+  background-color: $header-bg;
+  border-bottom: 1px solid #DDD;
+
+  .digit-number {
+    display: inline-block;
+    width: $digits-size;
+    height: $digits-size;
+    font-size: $digits-font-size;
+    font-weight: bold;
+    line-height: $digits-size;
+    color: $container-fg;
+    background-color: #F6F6F6;
+    border-radius: 0.3rem;
+    box-shadow: inset 0 1px 6px 0 #999;
+  }
+
+  .separater {
+    display: inline-block;
+    width: $digits-size / 4;
+    height: $digits-size;
+    font-size: $digits-font-size;
+    line-height: $digits-size;
+    color: #999;
+    text-align: center;
+  }
+}
+
+.slider-tip {
+  display: inline-block;
+  width: 3rem;
+
+  .tip-content {
+    height: 3rem;
+    padding: 1.3rem 0 0 0.5rem;
+    margin: 0;
+  }
+}
+
+.sliders {
+  float: right;
+  width: calc(99.99% - 3rem);
+  padding: 1.5rem 1rem 0 0;
+  background-color: $container-bg;
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+    &-label {
+      font-size: 0.6rem;
+      color: #AAA;
+      white-space: nowrap;
+
+      &-min {
+        position: absolute;
+        bottom: -1.2rem;
+        left: 0;
+      }
+
+      &-max {
+        position: absolute;
+        right: 0;
+        bottom: -1.2rem;
+      }
+
+      &-value {
+        position: absolute;
+        top: -1.6rem;
+        left: -0.55rem;
+        width: 1rem;
+        font-size: 0.8rem;
+        color: black;
+        text-align: center;
+      }
+    }
+
+    &-track {
+      display: block;
+      height: 0.3rem;
+      background-color: #EEE;
+      border-radius: 0.3rem;
+      transition: left 0.2s ease-out, width 0.2s ease-out;
+
+      &-container {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin-top: -0.15rem;
+      }
+
+      &-active {
+        background-color: $color-active;
+      }
+    }
+
+    &-container {
+      position: absolute;
+      transition: left 0.2s ease-out;
+    }
+
+    &-slider {
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin-top: -0.65rem;
+      margin-left: -0.5rem;
+      cursor: pointer;
+      background: $color-active;
+      border: 1px solid $color-active;
+      border-radius: 100%;
+      outline: none;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
+}
+
+
