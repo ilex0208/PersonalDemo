@@ -54,7 +54,12 @@ class DragModal extends Component {
               </Button>
             ]}
             dragableOps={{
-              bounds: '.ant-modal-wrap'
+              bounds: {
+                left: -700,
+                top: -75,
+                right: 700,
+                bottom: 675
+              }
             }}
             getContainer={() => document.getElementById('drag-modal')}
           >
