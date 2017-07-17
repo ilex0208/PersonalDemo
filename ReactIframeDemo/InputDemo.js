@@ -3,7 +3,6 @@ import {trim} from 'amos-tool';
 
 import Input from './_input/index';
 
-import './antd.css';
 
 class InputDemo extends Component {
 

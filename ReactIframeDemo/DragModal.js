@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 // import Dragany from 'ray-dragany';
 // import Dragany from 'react-draggable';
-import { Button, Checkbox } from 'antd';
+import { Button, Checkbox } from 'amos-antd';
 import Modal from './modal';
 
 class DragModal extends Component {

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 // import Dragany from 'ray-dragany';
 import Dragany from 'react-draggable';
-import { Modal, Button } from 'antd';
+import { Modal, Button } from 'amos-antd';
 
 function constrain(snap) {
   function constrainOffset(offset, prev) {

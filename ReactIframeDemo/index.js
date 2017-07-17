@@ -4,20 +4,41 @@
  * @date    2016-07-18 16:42:35
  * @description 主入口模块
  */
-import React from 'react';
+import React, {Component} from 'react';
 import { render } from 'react-dom';
 
-// import App from './App';
-// import App from './Test';
-// import App from './AppAmosTab';
-import App from './DragModal';
-// import App from './table';
-// import App from './InputDemo';
-// import App from './DatePickerDemo';
+import App1 from './App';
+import App2 from './Test';
+import App3 from './AppAmosTab';
+import App4 from './DragModal';
+import App5 from './table';
+import App6 from './InputDemo';
+import App7 from './DatePickerDemo';
 
-// import App from './select/index';
+import App8 from './select/index';
 
 // 引入主体样式文件
 import './index.css';
 
-render(<App />, document.getElementById('app'));
+class Root extends Component {
+  render() {
+    return (
+      <div>
+        <App1 />
+        <App2 />
+        <App3 />
+        <App4 />
+        <App5 />
+        <App6 />
+        <App7 />
+        <App8 />
+      </div>
+    );
+  }
+}
+
+Root.propTypes = {
+
+};
+
+render(<Root />, document.getElementById('app'));

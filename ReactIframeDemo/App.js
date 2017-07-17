@@ -4,7 +4,7 @@
  */
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Menu, Icon, Tabs } from 'antd';
+import { Menu, Icon, Tabs } from 'amos-antd';
 const MenuItem = Menu.Item;
 const TabPane = Tabs.TabPane;
 import DragableDecorator from './dragable';

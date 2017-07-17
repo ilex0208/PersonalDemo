@@ -2,7 +2,7 @@ import React, { Component, PropTypes, cloneElement } from 'react';
 // import RcTabs, { TabPane }  from 'rc-tabs';
 import RcTabs, { TabPane }  from 'amos-tabs';
 import classNames from 'classnames';
-import Icon from 'antd/lib/icon';
+import Icon from 'amos-antd/lib/icon';
 import './index.css';
 
 /**

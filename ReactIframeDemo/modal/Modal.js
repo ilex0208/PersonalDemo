@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 // import Dialog from 'rc-dialog';
 import Dialog from 'amos-dialog';
 import addEventListener from 'rc-util/lib/Dom/addEventListener';
-import Button from 'antd/lib/button';
+import Button from 'amos-antd/lib/button';
 import './index.css';
 
 function noop() {}

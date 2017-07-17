@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import {DatePicker, TimePicker} from 'amos-antd';
+import moment from 'moment';
+
 import {DatePicker} from 'amos-antd';
 
 import TimePicker from './timepicker';
@@ -10,6 +11,8 @@ import 'amos-antd/dist/amosantd.css';
 const MonthPicker = DatePicker.MonthPicker;
 
 const RangePicker = DatePicker.RangePicker;
+
+const dateFormat = 'YYYY-MM-DD';
 
 class DatePickerDemo extends Component {
 
@@ -28,35 +31,76 @@ class DatePickerDemo extends Component {
   }
 
   disabledDate = (current) => {
-    // can not select days after today
-    return current && current.getTime() > Date.now();
+    // Can not select days before today and today
+    return current && current.valueOf() < Date.now();
+  }
+
+  onOk = (value) => {
+    console.log('onOk: ', value);
   }
 
   render() {
     return (
       <div>
-        <DatePicker onChange={this.onChange} />
-        <DatePicker disabledDate={this.disabledDate} />
-        <DatePicker defaultValue="2015-06-06" disabled />
-        <DatePicker defaultValue="2015/01/01" format="yyyy/MM/dd" />
-        <MonthPicker defaultValue="2015-12" />
+        <span>basic</span>
+        1<DatePicker onChange={this.onChange} />
+        2<DatePicker disabledDate={this.disabledDate} />
+        3<DatePicker defaultValue={moment('2015-06-06', dateFormat)} disabled />
+        4<MonthPicker defaultValue={moment('2015-06', 'YYYY-MM')} disabled />
 
         <div>
-          <RangePicker style={{ width: 184 }} onChange={this.onRangeChange} />
+          5<RangePicker
+            defaultValue={[moment('2015-06-06', dateFormat), moment('2015-06-06', dateFormat)]}
+            disabled
+          />
+          6<RangePicker
+            ranges={{ Today: [moment(), moment()], 'This Month': [moment(), moment().endOf('month')] }}
+            onChange={this.onRangeChange}
+          />
           <br />
-          <RangePicker showTime format="yyyy/MM/dd HH:mm:ss" onChange={this.onRangeChange} />
+          7<RangePicker
+            ranges={{ Today: [moment(), moment()], 'This Month': [moment(), moment().endOf('month')] }}
+            showTime
+            format="YYYY/MM/DD HH:mm:ss"
+            onChange={this.onRangeChange}
+          />
         </div>
 
-        <DatePicker size="large" />
+        8<DatePicker size="large" />
 
-        <DatePicker showTime format="yyyy-MM-dd HH:mm:ss" placeholder="请选择时间" onChange={this.onTimeChange} />
+        9<DatePicker
+          showTime
+          timePickerType="timepicker"
+          format="YYYY-MM-DD HH:mm:ss"
+          placeholder="Select Time"
+          onChange={this.onTimeChange}
+          onOk={this.onOk}
+        />
+
+        9clock<DatePicker
+          showTime
+          timePickerType="clock"
+          format="YYYY-MM-DD HH:mm:ss"
+          placeholder="Select Time"
+          onChange={this.onTimeChange}
+          onOk={this.onOk}
+        />
+
+        9simple<DatePicker
+          showTime
+          timePickerType="simple"
+          format="YYYY-MM-DD HH:mm:ss"
+          placeholder="Select Time"
+          onChange={this.onTimeChange}
+          onOk={this.onOk}
+        />
 
         <div>
-          <DatePicker onChange={this.handleDateChange} />
-          <TimePicker onChange={this.handleTimeChange} />
-          <TimePicker onChange={this.handleTimeChange} timePickerType='timepicker' />
-          <TimePicker onChange={this.handleTimeChange} timePickerType='clock' />
-          <TimePicker onChange={this.handleTimeChange} timePickerType='simple' />
+          10<DatePicker onChange={this.handleDateChange} />
+          11<TimePicker onChange={this.handleTimeChange} />
+          12<TimePicker onChange={this.handleTimeChange} timePickerType='timepicker' />
+          13<TimePicker onChange={this.handleTimeChange} timePickerType='clock' />
+          14<TimePicker onChange={this.handleTimeChange} timePickerType='simple' />
         </div>
       </div>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Dialog from './Modal';
-import Icon from 'antd/lib/icon';
-import Button from 'antd/lib/button';
+import Icon from 'amos-antd/lib/icon';
+import Button from 'amos-antd/lib/button';
 import classNames from 'classnames';
 import { getConfirmLocale } from './locale';
 
