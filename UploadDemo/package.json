@@ -13,8 +13,8 @@
     "amos-build": "^1.2.37"
   },
   "dependencies": {
-    "amos-antd": "^1.1.8",
-    "amos-core": "^1.3.26",
+    "amos-antd": "^2.0.0",
+    "amos-core": "^2.0.0",
     "md5": "^2.2.1",
     "multer": "^1.3.0",
     "react": "^15.3.2",

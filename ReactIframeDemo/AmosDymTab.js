@@ -18,7 +18,7 @@ const panes = [
   { key: 'reactHome', title: 'React', url:'https://facebook.github.io/react/' }
 ];
 
-class App extends Component {
+class AmosDymTab extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,8 +71,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+AmosDymTab.propTypes = {
 
 };
 
-export default App;
+export default AmosDymTab;

@@ -5,9 +5,11 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Menu, Icon, Tabs } from 'amos-antd';
+
+import DragableDecorator from './dragable';
+
 const MenuItem = Menu.Item;
 const TabPane = Tabs.TabPane;
-import DragableDecorator from './dragable';
 const {dragableContainersDecorator, dragableGroupDecorator} = DragableDecorator;
 
 const menus = [
@@ -24,7 +26,7 @@ const menus = [
 const opCont ={};
 const opGroup = {};
 
-class App extends Component {
+class IframeDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -108,24 +110,25 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <nav className="nav">
-          <Menu
-            className='menu'
-            id='nav'
-            onClick={this._handleClick}
-            selectedKeys={[this.state.current]}
-            theme='dark'
-          >
-            {
-              menus.map( menu =>
-                <MenuItem key={menu.key}>
-                  <Icon type={menu.icon} />&nbsp;{menu.title}
-                </MenuItem>
-              )
-            }
-          </Menu>
-        </nav>
+      <div style={{
+        height: '300px'
+      }}
+      >
+        <Menu
+          id='nav'
+          onClick={this._handleClick}
+          selectedKeys={[this.state.current]}
+          mode="horizontal"
+          theme='dark'
+        >
+          {
+            menus.map( menu =>
+              (<MenuItem key={menu.key}>
+                <Icon type={menu.icon} />&nbsp;{menu.title}
+              </MenuItem>)
+            )
+          }
+        </Menu>
         <section className="content">
           <Tabs
             className="second-pane"
@@ -144,8 +147,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+IframeDemo.propTypes = {
 
 };
 
-export default App;
+export default IframeDemo;

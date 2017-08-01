@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Table, Button, Pagination } from 'antd';
+import { Table, Button, Pagination } from 'amos-antd';
 
 import ActionBar from './custom/ActionBar';
 
@@ -43,7 +43,7 @@ for (let i = 0; i < 46; i++) {
   });
 }
 
-class App extends Component {
+class CustomeColTableDemo extends Component {
 
   constructor(props) {
     super(props);
@@ -134,4 +134,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default CustomeColTableDemo;

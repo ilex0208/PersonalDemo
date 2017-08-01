@@ -13,7 +13,7 @@ amosConfig.name = 'intelligentDespatch';
 // 入口点
 // ------------------------------------
 amosConfig.entry = {
-  index: './index.js'
+  index: './entry.js'
 };
 
 // ------------------------------------

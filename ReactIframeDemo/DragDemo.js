@@ -17,7 +17,7 @@ const opGroup = {
   group: 'shared'
 };
 
-class App extends Component {
+class DragDemo extends Component {
 
   componentDidMount() {
     let ref1 = ReactDOM.findDOMNode(this.refs['containersDecorator']);
@@ -65,8 +65,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+DragDemo.propTypes = {
 
 };
 
-export default App;
+export default DragDemo;

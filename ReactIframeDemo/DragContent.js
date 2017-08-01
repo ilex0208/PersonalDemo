@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 // import Dragany from 'ray-dragany';
 import Dragany from 'react-draggable';
-import { Modal, Button } from 'amos-antd';
 
 function constrain(snap) {
   function constrainOffset(offset, prev) {
@@ -19,7 +18,7 @@ function constrain(snap) {
   };
 }
 
-class DragModal extends Component {
+class DragContent extends Component {
 
   constructor(props) {
     super(props);
@@ -53,7 +52,11 @@ class DragModal extends Component {
         bound="all box"
         zIndex={100}
       >
-        <div>
+        <div style={{
+          border: '1px solid #CCC',
+          width: '100px'
+        }}
+        >
           <div className="handle">Drag from here</div>
           <div>Lorem ipsum...</div>
         </div>
@@ -62,8 +65,8 @@ class DragModal extends Component {
   }
 }
 
-DragModal.propTypes = {
+DragContent.propTypes = {
 
 };
 
-export default DragModal;
+export default DragContent;

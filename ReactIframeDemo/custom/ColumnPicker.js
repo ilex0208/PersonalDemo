@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames';
-import {Tree} from 'antd';
+import { Tree } from 'amos-antd';
 import Icon from 'amos-icon';
 
-import {getSelectedKeys, checkDefaultColumns, getConsts, defaultLocale} from './utils';
+import { getSelectedKeys, checkDefaultColumns, getConsts, defaultLocale } from './utils';
 
 const TreeNode = Tree.TreeNode;
 

@@ -5,9 +5,6 @@ import {DatePicker} from 'amos-antd';
 
 import TimePicker from './timepicker';
 
-import 'amos-antd/dist/amosantd.css';
-
-
 const MonthPicker = DatePicker.MonthPicker;
 
 const RangePicker = DatePicker.RangePicker;

@@ -25,7 +25,7 @@ defaultConfig.name = 'intelligentDespatch';
 // 入口点
 // ------------------------------------
 defaultConfig.entry = {
-  index: './entry.js'
+  index: './index.js'
 };
 
 if('development' === _ENV_){

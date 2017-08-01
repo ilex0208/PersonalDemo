@@ -8,7 +8,7 @@ import Select from './basic';
 const Option = Select.Option;
 import './index.css';
 
-class App extends Component {
+class SelectDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -127,7 +127,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="select-wrapper">
+      <div className="select-wrSelectDemoer">
         <div className="select-top"></div>
         <div className="select-content">
           <Select
@@ -169,8 +169,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+SelectDemo.propTypes = {
 
 };
 
-export default App;
+export default SelectDemo;
