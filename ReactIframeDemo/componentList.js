@@ -14,7 +14,8 @@ const comList = [
   { key: 'tcgd', text: 'TableColumnGroupDemo', link: '/tcgd' },
   { key: 'cctd', text: 'CustomeColTableDemo', link: '/cctd' },
   { key: 'btd', text: 'BasiTableDemo', link: '/btd' },
-  { key: 'cbd', text: 'CheckBoxDemo1', link: '/cbd' }
+  { key: 'cbd', text: 'CheckBoxDemo1', link: '/cbd' },
+  { key: 'topdf', text: 'ToPdf', link: '/topdf' }
 ];
 
 export default comList;

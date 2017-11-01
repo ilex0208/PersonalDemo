@@ -27,6 +27,7 @@ import TableColumnGroupDemo from './TableColumnGroupDemo';
 import CustomeColTableDemo from './CustomeColTableDemo';
 import BasiTableDemo from './BasiTableDemo';
 import CheckBoxDemo from './amoscheck';
+import ToPdf from './exports/ToPdf';
 
 
 // 配置路由
@@ -48,6 +49,7 @@ const routes = (
     <Route path='cctd' component={CustomeColTableDemo} />
     <Route path='btd' component={BasiTableDemo} />
     <Route path='cbd' component={CheckBoxDemo} />
+    <Route path='topdf' component={ToPdf} />
   </Route>
 );
 
